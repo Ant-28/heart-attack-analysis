@@ -1,0 +1,73 @@
+---
+title: 'Heart Attack Dataset: An Analysis'
+author: "Ananthajit Srikanth"
+date: "19/07/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+
+Heart attacks are the leading cause of death worldwide (source: Our World in Data). Hence, understanding how to predict the possibility of heart disease is extremely important.
+
+This analysis will use the UCI Machine Learning Repository's Heart Disease Dataset to predict the risk of heart disease in patients.
+
+## Dataset Information
+
+This analysis uses four datasets, each of which are from four different regions:
+
+* Hungarian Institute of Cardiology
+* University Hospital, Zurich, Switzerland and University Hospital, Basel, Switzerland
+* Cleveland Clinic Foundation
+* V.A. Medical Center, Long Beach
+
+Each of these regions form the *processed.hungarian*,*processed.switzerland*,*processed.cleveland*, and *processed.va* datasets.
+
+The *processed* prefix indicates that out of 76 variables, only 14 are used. All the tables are also comma separated.
+
+Given below are the variables in the dataset, as per the heart-disease.names file:
+
+1. Age in years
+2. Sex (assigned at birth) (1 is male, and 0 is female)
+3. Chest Pain Type:
+  1 - Typical Angina
+  2 - Atypical Angina
+  3 - Non anginal Pain
+  4 - Asymptomatic
+4. trestbps - Resting Blood Pressure in mm Hg
+5. chol - Serum Cholesterol in mg/dl
+6. fbs - Is fasting blood sugar greater than 120 mg/dl? (1 = yes, 2 = no)
+7. restecg - Resting Electrocardiogram (ECG) results:
+  0 - Normal
+  1 - 
+8.
+9.
+10.
+11.
+12.
+13.
+14.
+    
+  
+
+
+
+
+
+```{r}
+
+```
+
+
+
+
+# Bibliography
+1. Hungarian Institute of Cardiology. Budapest: Andras Janosi, M.D.
+       2. University Hospital, Zurich, Switzerland: William Steinbrunn, M.D.
+       3. University Hospital, Basel, Switzerland: Matthias Pfisterer, M.D.
+       4. V.A. Medical Center, Long Beach and Cleveland Clinic Foundation:
+	  Robert Detrano, M.D., Ph.D.
+https://ourworldindata.org/causes-of-death
