@@ -1,6 +1,6 @@
 # Heart attack analysis
 
-# Loading the required libraries, can add required libraries later
+# Loading the required libraries, can add required libraries later in vector
 required_libraries <- c("caret", "matrixStats", "tidyverse", "knitr", "lubridate", "broom", "randomForest", "rattle", "rpart")
 # The for loop installs and loads libraries one by one from required_libraries
 for(i in 1:length(required_libraries)){

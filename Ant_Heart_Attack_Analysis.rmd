@@ -42,7 +42,7 @@ Given below are the variables in the dataset, as per the heart-disease.names fil
 6. fbs - Is fasting blood sugar greater than 120 mg/dl? (1 = yes, 2 = no)
 7. restecg - Resting Electrocardiogram (ECG) results:
   0 - Normal
-  1 - 
+  1 - w
 8.
 9.
 10.
