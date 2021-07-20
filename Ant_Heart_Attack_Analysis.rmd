@@ -32,7 +32,7 @@ Given below are the variables in the dataset, as per the heart-disease.names fil
 
 1. Age in years
 2. Sex (assigned at birth) (1 is male, and 0 is female)
-3. Chest Pain Type:
+3. Chest Pain Type (one of four values):
   1 - Typical Angina
   2 - Atypical Angina
   3 - Non anginal Pain
@@ -40,24 +40,55 @@ Given below are the variables in the dataset, as per the heart-disease.names fil
 4. trestbps - Resting Blood Pressure in mm Hg
 5. chol - Serum Cholesterol in mg/dl
 6. fbs - Is fasting blood sugar greater than 120 mg/dl? (1 = yes, 2 = no)
-7. restecg - Resting Electrocardiogram (ECG) results:
+7. restecg - Resting Electrocardiogram (ECG) results (one of three values):
   0 - Normal
-  1 - w
-8.
-9.
-10.
-11.
-12.
-13.
-14.
-    
+  1 - Having ST-T wave abnormality (T wave inversions and/or ST elevation or depression of > 0.05 mV): This is a symptom of Myocardial Infarction
+  2 - Showing probable or definite left ventricular hypertrophy by Estes' criteria (enlargment of the left ventricle, usually to compensate for tissue loss)
+8. thalach - Maximum Heart Rate Achieved (in beats per minute)
+9. exang - Exercise Induced Angina (1 = yes, 0 = no)
+10. oldpeak - ST depression induced by exercise relative to rest
+11. slope - Slope of ST segment (as seen in ECG) during excercise:
+  * 1 - Upsloping
+  * 2 - Flat
+  * 3 - Downsloping
+12. ca - Number of vessels colored by fluoroscopy (0 - 3) 
+13. thal: One of three possible values:
+  * 3 - Normal
+  * 6 - Fixed Defect
+  * 7 - Reversible Defect
+
+14. num (outcome) - Diagnosis of Heart Disease:
+  1 - More than 50% narrowing of diameter of any major heart vessel
+  0 - Less than 50% narrowing of diameter of any major heart vessel.  
   
+## Creating the Datasets
 
+The datasets are publicly available at the [UCI Machine Learning repository website](https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/) 
 
-
-
+First, libraries have to be loaded for analysis:
 
 ```{r}
+# Heart attack analysis
+
+# Loading the required libraries, can add required libraries later in vector (same code as used in previous project, source: Ananthajit Srikanth)
+required_libraries <- c("caret", "matrixStats", "tidyverse", "knitr", "lubridate", "broom", "randomForest", "rattle", "rpart")
+# The for loop installs and loads libraries one by one from required_libraries
+for(i in 1:length(required_libraries)){
+  if(!require(required_libraries[i], character.only = TRUE)){
+    install.packages(required_libraries[i], repos = "http://cran.us.r-project.org")
+    library(required_libraries[i], character.only = TRUE)
+  }
+  else{
+    require(required_libraries[i], character.only = TRUE)}}
+
+# Run this line only if necessary:
+# update.packages()
+```
+
+Once the libraries are loaded, the datasets can be downloaded:
+
+```{r}
+
 
 ```
 
@@ -71,3 +102,4 @@ Given below are the variables in the dataset, as per the heart-disease.names fil
        4. V.A. Medical Center, Long Beach and Cleveland Clinic Foundation:
 	  Robert Detrano, M.D., Ph.D.
 https://ourworldindata.org/causes-of-death
+https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/
