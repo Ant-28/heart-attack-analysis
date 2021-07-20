@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Introduction
 
-Heart attacks are the leading cause of death worldwide (source: Our World in Data). Hence, understanding how to predict the possibility of heart disease is extremely important.
+Heart attacks are the leading cause of death worldwide (source: Our World in Data). Hence, understanding how to predict the possibility of heart disease is extremely important. 
 
 This analysis will use the UCI Machine Learning Repository's Heart Disease Dataset to predict the risk of heart disease in patients.
 
