@@ -13,6 +13,28 @@ for(i in 1:length(required_libraries)){
 
 # Run this line only if necessary:
 # update.packages()
+
+# Show that the files are comma-separated
+
+download.file(url = "https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.cleveland.data", destfile = 'processed.cleveland.data')
+readLines(con = 'processed.cleveland.data', n = 1)
+
+
+download.file(url = "https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.hungarian.data", destfile = "processed.hungarian.data")
+
+download.file(url = "https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.va.data", destfile = "processed.va.data")
+
+download.file(url = "https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.switzerland.data", destfile = "processed.switzerland.data")
+
+noquote("Hungarian")
+readLines(con = 'processed.hungarian.data', n = 1)
+noquote("Switzerland")
+readLines(con = 'processed.switzerland.data', n = 1)
+noquote("va")
+readLines(con = 'processed.va.data', n = 1)
+
+
+
 download.file(url = "https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.cleveland.data", destfile = "cleveland.csv")
 
 download.file(url = "https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/processed.hungarian.data", destfile = "hungarian.csv")
