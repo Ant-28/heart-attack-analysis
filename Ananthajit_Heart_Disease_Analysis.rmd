@@ -400,7 +400,7 @@ We can begin the analysis. However, multiple training algorithms require there t
 
 Imputation is a method by which values that will be used for training are predicted, based on existing data. For example, if the ca variable is an NA, but restecg is 1 (heart disease risk) and chol (cholesterol) is high, then it would be illogical to predict 3 (3 arteries with bloodflow and less blockage in fluoroscopy), and an imputation method would predict, for example, a 1.
 
-Imputation is only done after splitting the dataset. If performed before splitting, values in the debug/test set may be imputed based on predictions made not only using the debug/test set, but also using the training set, which may lead to skewed imputes, since there may be differences in the datasets after splitting. (Imputation relies on relations between variables, which can vary between datasets.) Imputation is technically part of the training/testing process, since it modifies data values, so when debugging/testing, 
+Imputation is only done after splitting the dataset. If performed before splitting, values in the debug/test set may be imputed based on predictions made not only using the debug/test set, but also using the training set (and vice versa), which may lead to skewed imputes, since there may be differences in the datasets after splitting. (Imputation relies on relations between variables, which can vary between datasets.)
 
 ```{r, results='hide'}
 # set.seed for consistency
