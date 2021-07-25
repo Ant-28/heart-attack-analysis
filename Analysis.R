@@ -313,7 +313,7 @@ print(fmeas6)
 
 
 
-# modelLookup('ranger') there is one tuning parameter
+# modelLookup('ranger') there are three tuning parameters
 # ranger random forest model
 # based on help documentatation, rf randomly samples variables in each split using mtry
 # split rule is gini, extratrees or hellinger for classification (ranger also supports regression)
@@ -331,10 +331,10 @@ print(fmeas7)
 print(fmeas7 == fmeas6)
 
 # This takes time
-# modelLookup('adabag') there are three tuning parameters
+# modelLookup('adabag') there are two tuning parameters
 # adabag random forest model
-
-fit_adaboost <- train(num~., data=train_set_2, method = 'AdaBag', trControl = control, tuneGrid = data.frame(expand.grid(mfinal = 200,maxdepth = 1)))
+# maxdepth limited as AdaBag takes too long
+fit_adaboost <- train(num~., data=train_set_2, method = 'AdaBag', trControl = control, tuneGrid = data.frame(expand.grid(mfinal = 200,maxdepth = 2)))
 # see result on debug set
 
 predict_adaboost <- predict(fit_adaboost, newdata = debug_set_2)
