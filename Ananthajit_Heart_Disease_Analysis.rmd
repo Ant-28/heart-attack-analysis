@@ -705,6 +705,7 @@ Another method can be implemented: support vector machines.
 ## Support Vector Machines (SVM)
 
 SVMs are built for nonlinear decision boundaries, and have increased computational efficiency, compared to neural networks.
+Note that centering and scaling numerical values is necessary for SVMs and Neural Networks so that less iterations (since these are iterative learning algorithms) are spent normalizing the values and more iterations are spent training. 
 
 ```{r}
 # SVMs
@@ -781,7 +782,7 @@ print(fmeas12)
 ```
 This is the best result of all of the above methods.
 
-
+## K-Nearest Neighbours
 Besides these techniques, a smoothing method can also be considered, such as k-nearest neighbours:
 
 ```{r}
@@ -805,6 +806,8 @@ print(fmeas13)
 ```
 
 This is a very poor result, suggesting that smoothing methods are not an effective solution.
+
+## Ensembling
 
 While most of these methods provided a range of F1 scores, from 0.8 to 0.9, their combined effectiveness may be better, or worse. This method of combining models is also known as ensembling. First, all the models will be ensembled together:
 
