@@ -35,7 +35,7 @@ close(fileConnection)
 
 Heart attacks are the leading cause of death worldwide (source: [Our World in Data](https://ourworldindata.org/causes-of-death)). Hence, understanding how to predict the possibility of heart disease is extremely important. 
 
-This analysis will use the UCI Machine Learning Repository's Heart Disease Dataset to predict the risk of heart disease in patients. It uses a variety of classification methods (such as discriminant analysis, random forests, neural networks, et cetera), to provide a final $F_1$ score of 0.88 on a test set.
+This analysis will use the UCI Machine Learning Repository's Heart Disease Dataset to predict the presence of heart disease in patients. It uses a variety of classification methods (such as discriminant analysis, random forests, neural networks, et cetera), to provide a final $F_1$ score of 0.88 on a test set.
 
 ## Dataset Information
 
@@ -519,7 +519,7 @@ fmeas2 <- F_meas(data = predict_lda, reference = debug_set_2$num, relevant = lev
 print(fmeas2)
 print(fmeas2 > fmeas1)
 ```
-A slight improvement is observed.
+A slight decrease is observed.
 Now, qda can be tested:
 
 
@@ -612,7 +612,7 @@ This can also be trained on the ranger library, which has a greater number of op
 
 ```{r, results='hide'}
 
-# modelLookup('ranger') there is one tuning parameter
+# modelLookup('ranger') there are three tuning parameters
 # ranger random forest model
 # based on help documentatation, rf randomly samples variables in each split using mtry
 # split rule is gini, extratrees or hellinger for classification (ranger also supports regression)
@@ -638,10 +638,10 @@ Another such implementation of random forests is the bagged adaboost implementat
 
 ```{r}
 # This takes time
-# modelLookup('adabag') there are three tuning parameters
+# modelLookup('adabag') there are two tuning parameters
 # adabag random forest model
-
-fit_adaboost <- train(num~., data=train_set_2, method = 'AdaBag', trControl = control, tuneGrid = data.frame(expand.grid(mfinal = 200,maxdepth = 1)))
+# maxdepth limited as AdaBag takes too long
+fit_adaboost <- train(num~., data=train_set_2, method = 'AdaBag', trControl = control, tuneGrid = data.frame(expand.grid(mfinal = 200,maxdepth = 2)))
 # see result on debug set
 
 predict_adaboost <- predict(fit_adaboost, newdata = debug_set_2)
@@ -931,7 +931,7 @@ results_table_final %>% knitr::kable()
 
 # Conclusion
 
-This analysis used a range of classification models, such as neural networks, support vector machines, logistic regression, and random forests to predict the possibility of heart disease. The final model on the testing set used a Support Vector Machine with a Radial Basis Kernel, to give a final $F_1$ score of 0.88. 
+This analysis used a range of classification models, such as neural networks, support vector machines, logistic regression, random forests, ensembles, et cetera to predict the presence of heart disease. The final model on the testing set used a Support Vector Machine with a Radial Basis Kernel, to give a final $F_1$ score of 0.88. 
 
 This model can be used as an aide to gauge whether someone has heart disease or not, which is very useful in the field of medicine. This tool, however, is not a substitute for a diagnosis.
 
